@@ -1,0 +1,27 @@
+string encode(string src)
+{     
+  //Your code here
+    string res = "";
+    int count = 0;
+    char cu = src[0];
+    for(int i=0; i<src.length(); i++)
+    {
+        if(src[i] != cu)
+        {
+            res += (cu + to_string(count));
+            cu = src[i];
+            count = 0;
+        }
+        count++;
+    }
+    res += (cu + to_string(count));
+    return res;
+}     
+ 
+ 
+ 
+ Test case - 
+ str = abbbcdddd
+ Output: a1b3c1d4
+ 
+ problem link - https://practice.geeksforgeeks.org/problems/run-length-encoding/1/#
